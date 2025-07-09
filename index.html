@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tailwind Lessons</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+	<script>
+	tailwind.config = {
+	  darkMode: 'class'
+	}
+  </script>
+</head>
+
+	<body class="transition duration-500 font-sans leading-relaxed gray-700 text-gray-600 p-2 bg-white dark:bg-gray-600 dark:text-white">
+
+	<div class="flex justify-start ">
+  <button onclick="toggleTheme()" class="mt-4 px-4 py-2 bg-gray-800 text-white dark:bg-gray-100 dark:text-black rounded-full">
+	🌘
+  </button>
+</div>
+	
+	<h1 class="text-2xl font-bold my-4 text-blue-700 dark:text-yellow-500">🔰 Tailwind CSS: Padding and Background Colors</h1>
+    <div class="my-8 border-t-2 border-b-2 border-gray-500 dark:border-yellow-800"></div>
+
+   <!-- ✅ Padding Section -->
+  
+    <section class="mb-6">
+        <h2 class="text-xl font-black mb-2 text-blue-600 dark:text-yellow-500">What does <code>p-8</code> mean?</h2>
+        <ul class="list-disc list-inside">
+        <li><code>p</code> = padding on <strong>all sides</strong></li>
+        <li><code>8</code> = spacing unit from Tailwind’s scale</li>
+        </ul>
+        <p class="mt-2">🔢 <code>p-8</code> = <code>padding: 2rem;</code> → Since <code>1rem = 16px</code>, that’s <strong>32px</strong> padding on all sides.</p>
+    </section>
+  
+	<!-- ✅ Padding Variants -->
+  
+    <section class="mb-6">
+        <h2 class="text-xl font-semibold text-blue-900 dark:text-yellow-500 mb-2">🔄 Variations of <code>p</code></h2>
+        <table class="w-full text-left border border-gray-300">
+        <thead class="bg-gray-800">
+            <tr>
+            <th class="p-2 border">Class</th>
+            <th class="p-2 border">Meaning</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td class="p-2 border">p-8</td><td class="p-2 border">padding on all sides</td></tr>
+            <tr><td class="p-2 border">pt-8</td><td class="p-2 border">padding-top</td></tr>
+            <tr><td class="p-2 border">pb-8</td><td class="p-2 border">padding-bottom</td></tr>
+            <tr><td class="p-2 border">pl-8</td><td class="p-2 border">padding-left</td></tr>
+            <tr><td class="p-2 border">pr-8</td><td class="p-2 border">padding-right</td></tr>
+            <tr><td class="p-2 border">px-8</td><td class="p-2 border">padding left + right</td></tr>
+            <tr><td class="p-2 border">py-8</td><td class="p-2 border">padding top + bottom</td></tr>
+        </tbody>
+        </table>
+    </section>
+  
+	<!-- ✅ Example Box -->
+  
+    <section class="mb-6">
+        <h2 class="text-xl font-semibold dark:text-yellow-500 text-blue-600 mb-2">✅ Example Box</h2>
+        <div class="p-8 bg-yellow-600 rounded shadow-md">
+        This box has <strong>32px padding</strong> on all sides using <code>p-8</code>.
+        </div>
+    </section>
+    
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+
+  <!-- ✅ Text Size Section -->
+  
+    <section class="mb-6">
+    <h2 class="text-xl font-semibold text-blue-600 dark:text-yellow-500 mb-2">What does <code>text-3xl</code> mean?</h2>
+    <ul class="list-disc list-inside">
+        <li><code>text</code> = text size</li>
+        <li><code>3xl</code> = size level (larger than base text)</li>
+    </ul>
+    <p class="mt-2">🔤 <code>text-3xl</code> sets the font size to <code>1.875rem</code> (about <strong>30px</strong>).</p>
+
+    <p class="text-3xl font-bold mt-4 mb-6">
+        This is <code>text-3xl</code> size text — big and bold!
+    </p>
+
+    <h3 class="text-lg font-semibold text-blue-600 mb-2">📏 Tailwind Text Size Scale:</h3>
+    <table class="w-full text-left border border-gray-300">
+        <thead class="bg-gray-800">
+        <tr>
+            <th class="p-2 border">Class</th>
+            <th class="p-2 border">Font Size (rem)</th>
+            <th class="p-2 border">Font Size (px)</th>
+            <th class="p-2 border">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td class="p-2 border">text-xs</td><td class="p-2 border">0.75rem</td><td class="p-2 border">12px</td><td class="p-2 border">Extra small</td></tr>
+        <tr><td class="p-2 border">text-sm</td><td class="p-2 border">0.875rem</td><td class="p-2 border">14px</td><td class="p-2 border">Small</td></tr>
+        <tr><td class="p-2 border">text-base</td><td class="p-2 border">1rem</td><td class="p-2 border">16px</td><td class="p-2 border">Base (normal) size</td></tr>
+        <tr><td class="p-2 border">text-lg</td><td class="p-2 border">1.125rem</td><td class="p-2 border">18px</td><td class="p-2 border">Large</td></tr>
+        <tr><td class="p-2 border">text-xl</td><td class="p-2 border">1.25rem</td><td class="p-2 border">20px</td><td class="p-2 border">Extra large</td></tr>
+        <tr><td class="p-2 border">text-2xl</td><td class="p-2 border">1.5rem</td><td class="p-2 border">24px</td><td class="p-2 border">2× Extra large</td></tr>
+        <tr class="bg-yellow-600 font-semibold"><td class="p-2 border">text-3xl</td><td class="p-2 border">1.875rem</td><td class="p-2 border">30px</td><td class="p-2 border">3× Extra large</td></tr>
+        <tr><td class="p-2 border">text-4xl</td><td class="p-2 border">2.25rem</td><td class="p-2 border">36px</td><td class="p-2 border">4× Extra large</td></tr>
+        <tr><td class="p-2 border">text-5xl</td><td class="p-2 border">3rem</td><td class="p-2 border">48px</td><td class="p-2 border">5× Extra large</td></tr>
+        <tr><td class="p-2 border">text-6xl</td><td class="p-2 border">3.75rem</td><td class="p-2 border">60px</td><td class="p-2 border">6× Extra large</td></tr>
+        <tr><td class="p-2 border">text-7xl</td><td class="p-2 border">4.5rem</td><td class="p-2 border">72px</td><td class="p-2 border">7× Extra large</td></tr>
+        <tr><td class="p-2 border">text-8xl</td><td class="p-2 border">6rem</td><td class="p-2 border">96px</td><td class="p-2 border">8× Extra large</td></tr>
+        <tr><td class="p-2 border">text-9xl</td><td class="p-2 border">8rem</td><td class="p-2 border">128px</td><td class="p-2 border">9× Extra large</td></tr>
+        </tbody>
+    </table>
+    </section>
+
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+
+  <!-- ✅ Background Color Section -->
+  
+  <section class="mb-6">
+	<h2 class="text-xl font-semibold text-blue-600 dark:text-yellow-500 mb-2">🎨 What does <code>bg-gray-100</code> mean?</h2>
+	<ul class="list-disc list-inside">
+	  <li><code>bg</code> = background</li>
+	  <li><code>gray</code> = color name</li>
+	  <li><code>100</code> = shade level (100 = very light)</li>
+	</ul>
+	<p class="mt-2">Tailwind uses a color scale ranging from <code>50</code> (lightest) to <code>950</code> (darkest). That’s <strong>19 levels</strong> per color.</p>
+
+	<div class="grid grid-cols-3 gap-4 mt-4">
+	  <div class="bg-gray-100 dark:text-black p-4 rounded shadow text-center">bg-gray-100</div>
+	  <div class="bg-gray-400 p-4 rounded shadow text-white text-center">bg-gray-400</div>
+	  <div class="bg-gray-800 p-4 rounded shadow text-white text-center">bg-gray-800</div>
+	</div>
+  </section>
+  
+  <!-- ✅ Example Gray Shades Visually -->
+  
+  <section class="mb-6">
+	<h2 class="text-xl font-semibold text-blue-600 dark:text-yellow-500 mb-2">Example gray shades visually:</h2>
+	<table class="w-full text-left border border-gray-300">
+	  <thead class=" bg-gray-200 dark:bg-gray-800">
+		<tr>
+		  <th class="p-2 border dark:text-gray-100">Shade</th>
+		  <th class="p-2 border dark:text-gray-100">Example Color</th>
+		  <th class="p-2 border dark:text-gray-100">Description</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td class="p-2 border ">gray-50</td>
+		  <td class="p-2 border bg-gray-50"></td>
+		  <td class="p-2 border">Very Light</td>
+		</tr>
+		<tr>
+		  <td class="p-2 border">gray-100</td>
+		  <td class="p-2 border bg-gray-100"></td>
+		  <td class="p-2 border">Light</td>
+		</tr>
+		<tr>
+		  <td class="p-2 border">gray-400</td>
+		  <td class="p-2 border bg-gray-400"></td>
+		  <td class="p-2 border text-white">Medium</td>
+		</tr>
+		<tr>
+		  <td class="p-2 border">gray-800</td>
+		  <td class="p-2 border bg-gray-800"></td>
+		  <td class="p-2 border text-white">Dark</td>
+		</tr>
+		<tr>
+		  <td class="p-2 border">gray-950</td>
+		  <td class="p-2 border bg-gray-950"></td>
+		  <td class="p-2 border text-white">Very Dark</td>
+		</tr>
+	  </tbody>
+	</table>
+  </section>
+  
+
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+  
+  <!-- Border Top Example Section -->
+    <section class="mb-6">
+    <h2 class="text-xl font-semibold text-blue-600 dark:text-yellow-500 mb-2">🧱 What does <code>border-t-2</code> mean?</h2>
+    <ul class="list-disc list-inside">
+        <li><code>border</code> = apply a border</li>
+        <li><code>t</code> = top side</li>
+        <li><code>2</code> = border thickness (2px)</li>
+    </ul>
+
+    <p class="mt-2">So <code>border-t-2</code> means: <strong>add a 2px border only to the top of the element</strong>.</p>
+
+    <div class="mt-4 p-4 bg-white dark:bg-yellow-700 text-black border-t-2 border-gray-500 shadow">
+        This box has a <strong>2px top border</strong> using <code>border-t-2</code>.
+    </div>
+
+    <h3 class="text-lg font-semibold text-blue-600 mt-6 mb-2">📏 Tailwind Border Thickness Classes</h3>
+    <table class="w-full text-left border border-gray-300">
+        <thead class="bg-gray-200 dark:bg-gray-800">
+        <tr>
+            <th class="p-2 border">Class</th>
+            <th class="p-2 border">Thickness</th>
+            <th class="p-2 border">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td class="p-2 border">border</td><td class="p-2 border">1px</td><td class="p-2 border">Default (1px on all sides)</td></tr>
+        <tr class="bg-yellow-700 font-semibold"><td class="p-2 border">border-t-2</td><td class="p-2 border">2px</td><td class="p-2 border">Top border only</td></tr>
+        <tr><td class="p-2 border">border-b-4</td><td class="p-2 border">4px</td><td class="p-2 border">Bottom border only</td></tr>
+        <tr><td class="p-2 border">border-l-8</td><td class="p-2 border">8px</td><td class="p-2 border">Left border only</td></tr>
+        </tbody>
+    </table>
+    </section>
+
+
+
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+
+   <!-- ✅ rounded (Rounded Corners)-->
+   
+   <section class="mb-6">
+        <h2 class="text-xl font-semibold text-blue-600 dark:text-yellow-500 mb-2">🔵 What does <code>rounded</code> mean?</h2>
+        <ul class="list-disc list-inside">
+            <li><code>rounded</code> adds rounded corners to an element.</li>
+            <li>It’s like <code>border-radius</code> in CSS.</li>
+        </ul>
+        <div class="mt-4 grid grid-cols-3 gap-4">
+            <div class="p-4 bg-yellow-100 rounded text-center shadow">rounded</div>
+            <div class="p-4 bg-yellow-200 rounded-md text-center shadow">rounded-md</div>
+            <div class="p-4 bg-yellow-300 rounded-full text-center shadow">rounded-full</div>
+        </div>
+
+        <h3 class="text-lg font-semibold mt-6 mb-2">📏 Common Rounded Classes</h3>
+        <table class="w-full text-left border border-gray-300">
+            <thead class="bg-gray-200 dark:bg-gray-800">
+            <tr>
+                <th class="p-2 border dark:text-gray-800">Class</th>
+                <th class="p-2 border dark:text-gray-800">Effect</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="p-2 border">rounded</td><td class="p-2 border">Small border radius</td></tr>
+            <tr><td class="p-2 border">rounded-md</td><td class="p-2 border">Medium border radius</td></tr>
+            <tr><td class="p-2 border">rounded-lg</td><td class="p-2 border">Large border radius</td></tr>
+            <tr><td class="p-2 border">rounded-full</td><td class="p-2 border">Circle/fully rounded (useful for avatars)</td></tr>
+            </tbody>
+        </table>
+    </section>
+    <!-- 🧵 End of Border & Rounded Corners Section -->
+
+
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+
+  <!-- ✅ font (Font Weights) -->
+
+   <section class="mb-6">
+        <h2 class="text-xl font-semibold text-blue-600 dark:text-yellow-500 mb-2">🔤 What does <code>font</code> mean?</h2>
+        <ul class="list-disc list-inside">
+            <li>Tailwind uses <code>font-*</code> classes to change font <strong>weight</strong>.</li>
+        </ul>
+        <p class="mt-2">Here are some examples:</p>
+
+        <div class="mt-4 space-y-2">
+            <p class="font-thin">font-thin (100)</p>
+            <p class="font-normal">font-normal (400)</p>
+            <p class="font-semibold">font-semibold (600)</p>
+            <p class="font-bold">font-bold (700)</p>
+            <p class="font-black">font-black (900)</p>
+        </div>
+
+        <h3 class="text-lg font-semibold text-blue-600 mt-6 dark:text-yellow-500 mb-2">📏 Font Weight Classes</h3>
+        <table class="w-full text-left border border-gray-300">
+            <thead class="bg-gray-200 dark:bg-gray-800">
+            <tr>
+                <th class="p-2 border">Class</th>
+                <th class="p-2 border">Weight</th>
+                <th class="p-2 border">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="p-2 border">font-thin</td><td class="p-2 border">100</td><td class="p-2 border">Very light</td></tr>
+            <tr><td class="p-2 border">font-normal</td><td class="p-2 border">400</td><td class="p-2 border">Regular</td></tr>
+            <tr><td class="p-2 border">font-semibold</td><td class="p-2 border">600</td><td class="p-2 border">Semi-bold</td></tr>
+            <tr><td class="p-2 border">font-bold</td><td class="p-2 border">700</td><td class="p-2 border">Bold</td></tr>
+            <tr><td class="p-2 border">font-black</td><td class="p-2 border">900</td><td class="p-2 border">Extra bold</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+
+  <!-- ✅ x and y Axis (Horizontal & Vertical Spacing) -->
+
+   <section class="mb-6">
+        <h2 class="text-xl text-blue-600 font-semibold dark:text-yellow-500 mb-2">🧭 What do <code>x</code> and <code>y</code> mean in Tailwind?</h2>
+        <ul class="list-disc list-inside">
+            <li><code>x</code> = horizontal (left and right)</li>
+            <li><code>y</code> = vertical (top and bottom)</li>
+            <li>You’ll often see it used with margin <code>m</code> and padding <code>p</code> like: <code>mx-4</code>, <code>py-6</code></li>
+        </ul>
+
+        <div class="mt-4 space-y-4">
+            <div class="bg-blue-200 px-8 py-2">px-8 py-2 (Horizontal: 32px, Vertical: 8px)</div>
+            <div class="bg-blue-300 mx-8 my-4">mx-8 my-4 (Margin Left/Right: 32px, Top/Bottom: 16px)</div>
+        </div>
+
+        <h3 class="text-lg text-blue-600 font-semibold mt-6 mb-2">📏 Axis Shorthand Classes</h3>
+        <table class="w-full text-left border border-gray-300">
+            <thead class="bg-gray-200 dark:bg-gray-800">
+            <tr>
+                <th class="p-2 border">Class</th>
+                <th class="p-2 border">Effect</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="p-2 border">px-8</td><td class="p-2 border">Padding left & right (32px)</td></tr>
+            <tr><td class="p-2 border">py-4</td><td class="p-2 border">Padding top & bottom (16px)</td></tr>
+            <tr><td class="p-2 border">mx-6</td><td class="p-2 border">Margin left & right (24px)</td></tr>
+            <tr><td class="p-2 border">my-2</td><td class="p-2 border">Margin top & bottom (8px)</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+
+   <!-- ✅ Position section -->
+   <section class="mb-6">
+        <h2 class="text-xl text-blue-600 font-semibold dark:text-yellow-500 mb-2">📌 What does <code>position</code> do in Tailwind CSS?</h2>
+        <p>Tailwind provides utility classes to control how elements are positioned on the screen.</p>
+
+        <h3 class="text-lg font-semibold mt-4 mb-2">🧱 Position Classes</h3>
+        <ul class="list-disc list-inside mb-4">
+            <li><code>static</code> – default (no special positioning)</li>
+            <li><code>relative</code> – positioned relative to its normal place</li>
+            <li><code>absolute</code> – positioned relative to the nearest positioned ancestor</li>
+            <li><code>fixed</code> – positioned relative to the browser window</li>
+            <li><code>sticky</code> – scrolls normally until it reaches a threshold, then sticks</li>
+        </ul>
+
+        <div class="relative h-48 bg-blue-100 border border-blue-300 p-4">
+            <p>This box is <code>relative</code> (positioned normally).</p>
+
+            <div class="absolute top-2 right-2 bg-yellow-300 p-2 shadow dark:bg-gray-800">
+            absolute (top-right)
+            </div>
+
+            <div class="fixed bottom-2 right-2 bg-blue-300 p-2 shadow">
+            fixed (always at bottom-right)
+            </div>
+        </div>
+
+        <div class="h-40 overflow-y-auto mt-6 bg-gray-100 dark:bg-gray-800 border border-gray-300 p-4">
+            <div class="h-96 bg-gradient-to-b from-gray-300 to-gray-500 relative">
+            <div class="sticky top-2 bg-green-400 p-2 shadow">
+                sticky header (sticks to top)
+            </div>
+            <p class="mt-20 text-white">Scroll me to see sticky effect</p>
+            </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-blue-600 mt-6 mb-2">📋 Summary Table</h3>
+        <table class="w-full text-left border border-gray-300">
+            <thead class="bg-gray-200 dark:bg-gray-800">
+            <tr>
+                <th class="p-2 border">Class</th>
+                <th class="p-2 border">Meaning</th>
+                <th class="p-2 border">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="p-2 border">static</td><td class="p-2 border">Default</td><td class="p-2 border">Element stays in normal flow (no positioning)</td></tr>
+            <tr><td class="p-2 border">relative</td><td class="p-2 border">Relative</td><td class="p-2 border">Offset from normal position using top/right/bottom/left</td></tr>
+            <tr><td class="p-2 border">absolute</td><td class="p-2 border">Absolute</td><td class="p-2 border">Placed inside the nearest ancestor with relative/absolute/fixed</td></tr>
+            <tr><td class="p-2 border">fixed</td><td class="p-2 border">Fixed</td><td class="p-2 border">Stays in place even during scroll (relative to viewport)</td></tr>
+            <tr><td class="p-2 border">sticky</td><td class="p-2 border">Sticky</td><td class="p-2 border">Scrolls until it reaches a scroll position, then sticks</td></tr>
+            </tbody>
+        </table>
+    </section>
+    <!-- 📍 End of Positioning Section -->
+
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+
+     <!-- ✅ End with Tailwind flex Lesson Section (with examples & table) -->
+    <section class="mb-6">
+        <h2 class="text-xl text-blue-600 font-semibold dark:text-yellow-500 mb-2">🧱 What are <code>block</code>, <code>inline</code>, and <code>inline-block</code> in Tailwind?</h2>
+        <p>These utility classes control how elements flow and wrap in the layout. Each has different behavior.</p>
+
+        <h3 class="text-lg font-semibold mt-4 mb-2">📦 Visual Examples</h3>
+        
+        <!-- Block example -->
+        <div class="mb-4">
+            <p class="font-medium mb-1">🔹 <code>block</code> (takes full width)</p>
+            <span class="block bg-blue-300 p-2 rounded">Block element</span>
+            <span class="block bg-blue-400 p-2 rounded mt-1">Another block element</span>
+        </div>
+
+        <!-- Inline example -->
+        <div class="mb-4">
+            <p class="font-medium dark:text-yellow-500 mb-1">🔸 <code>inline</code> (sits next to each other)</p>
+            <span class="inline bg-green-300 p-2 rounded">Inline 1</span>
+            <span class="inline bg-green-400 p-2 rounded">Inline 2</span>
+        </div>
+
+        <!-- Inline-block example -->
+        <div class="mb-4">
+            <p class="font-medium mb-1">🔸 <code>inline-block</code> (sits inline but allows box sizing)</p>
+            <span class="inline-block bg-yellow-300 p-2 rounded">Inline-Block 1</span>
+            <span class="inline-block bg-yellow-400 p-2 rounded">Inline-Block 2</span>
+        </div>
+
+        <h3 class="text-lg font-semibold text-blue-600 dark:text-yellow-500 mt-6 mb-2">📋 Summary Table</h3>
+        <table class="w-full text-left border border-gray-300">
+            <thead class="bg-gray-200 dark:bg-gray-800">
+            <tr>
+                <th class="p-2 border">Class</th>
+                <th class="p-2 border">CSS</th>
+                <th class="p-2 border">Behavior</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="p-2 border">block</td>
+                <td class="p-2 border">display: block;</td>
+                <td class="p-2 border">Takes full width, stacks vertically</td>
+            </tr>
+            <tr>
+                <td class="p-2 border">inline</td>
+                <td class="p-2 border">display: inline;</td>
+                <td class="p-2 border">Flows inline, ignores width/height</td>
+            </tr>
+            <tr>
+                <td class="p-2 border">inline-block</td>
+                <td class="p-2 border">display: inline-block;</td>
+                <td class="p-2 border">Flows inline, but respects width/height</td>
+            </tr>
+            </tbody>
+        </table>
+   </section>
+   <!-- ✅ End with Tailwind flex Lesson Section (with examples & table) -->
+
+
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+
+   <!--   ✅ Tailwind block, inline, and inline-block Lesson Section -->
+   <section class="mb-6">
+        <h2 class="text-xl text-blue-600 font-semibold dark:text-yellow-500 mb-2">🧱 What does <code>flex</code> mean in Tailwind CSS?</h2>
+        <p>Tailwind uses the <code>flex</code> utility to apply <strong>flexbox layout</strong> to elements. Flexbox helps align, distribute, and arrange elements responsively.</p>
+
+        <h3 class="text-lg text-blue-600 dark:text-yellow-800 font-semibold mt-4 mb-2">📦 Basic Usage</h3>
+        <ul class="list-disc list-inside mb-4">
+            <li><code>flex</code> — sets the element to display: flex</li>
+            <li><code>flex-row</code> — default direction (horizontal)</li>
+            <li><code>flex-col</code> — vertical stacking</li>
+        </ul>
+
+        <!-- Flex Row Example -->
+        <div class="flex gap-4 mb-4 bg-blue-100 p-4 rounded">
+            <div class="bg-blue-300 p-2 w-16 text-center rounded">1</div>
+            <div class="bg-blue-400 p-2 w-16 text-center rounded">2</div>
+            <div class="bg-blue-500 p-2 w-16 text-center rounded">3</div>
+        </div>
+        <p class="mb-6 text-blue-600 dark:text-yellow-500">🔹 <code>flex</code> creates a row by default.</p>
+
+        <!-- Flex Column Example -->
+        <div class="flex flex-col gap-2 bg-green-100 p-4 rounded w-32">
+            <div class="bg-green-300 p-2 text-center rounded">A</div>
+            <div class="bg-green-400 p-2 text-center rounded">B</div>
+            <div class="bg-green-500 p-2 text-center rounded">C</div>
+        </div>
+        <p class="mt-2 text-blue-600">🔸 <code>flex-col</code> stacks items vertically.</p>
+
+        <h3 class="text-lg font-semibold text-blue-600 dark:text-yellow-500 mt-6 mb-2">📋 Display Classes</h3>
+        <table class="w-full text-left border border-gray-300">
+            <thead class="bg-gray-200 dark:bg-gray-800">
+            <tr>
+                <th class="p-2 border">Class</th>
+                <th class="p-2 border">Effect</th>
+                <th class="p-2 border">CSS Equivalent</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="p-2 border">block</td><td class="p-2 border">Block-level box</td><td class="p-2 border">display: block;</td></tr>
+            <tr><td class="p-2 border">inline-block</td><td class="p-2 border">Inline + block</td><td class="p-2 border">display: inline-block;</td></tr>
+            <tr><td class="p-2 border font-semibold bg-yellow-600 dark:bg-yellow-800">flex</td><td class="p-2 border font-semibold bg-yellow-600 dark:bg-yellow-800">Flexbox container</td><td class="p-2 border font-semibold bg-yellow-600 dark:bg-yellow-800">display: flex;</td></tr>
+            <tr><td class="p-2 border">inline-flex</td><td class="p-2 border">Inline flex container</td><td class="p-2 border">display: inline-flex;</td></tr>
+            <tr><td class="p-2 border">grid</td><td class="p-2 border">Grid layout</td><td class="p-2 border">display: grid;</td></tr>
+            <tr><td class="p-2 border">hidden</td><td class="p-2 border">Hide element</td><td class="p-2 border">display: none;</td></tr>
+            </tbody>
+        </table>
+
+        <h3 class="text-lg text-blue-600 font-semibold mt-6 text-blue-600 dark:text-yellow-500 mb-2">📍 Direction Classes</h3>
+        <table class="w-full text-left border border-gray-300">
+            <thead class="bg-gray-200 dark:bg-gray-800">
+            <tr>
+                <th class="p-2 border">Class</th>
+                <th class="p-2 border">Direction</th>
+                <th class="p-2 border">CSS</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="p-2 border">flex-row</td><td class="p-2 border">Horizontal</td><td class="p-2 border">flex-direction: row;</td></tr>
+            <tr><td class="p-2 border">flex-col</td><td class="p-2 border">Vertical</td><td class="p-2 border">flex-direction: column;</td></tr>
+            <tr><td class="p-2 border">flex-row-reverse</td><td class="p-2 border">Row reversed</td><td class="p-2 border">flex-direction: row-reverse;</td></tr>
+            <tr><td class="p-2 border">flex-col-reverse</td><td class="p-2 border">Column reversed</td><td class="p-2 border">flex-direction: column-reverse;</td></tr>
+            </tbody>
+        </table>
+    </section>
+    <!--✅ End with ✅ Tailwind block, inline, and inline-block Lesson Section-->
+
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+   
+    <!--✅ Tailwind flex Lesson Section (with examples & table)-->
+    <section class="mb-6">
+        <h2 class="text-xl font-semibold text-blue-600 dark:text-yellow-500 mb-2">🔲 What is <code>grid</code> in Tailwind CSS?</h2>
+        <p class="mb-4">
+            Tailwind’s <code>grid</code> utility enables you to create powerful and responsive layouts using CSS Grid.
+            It's great for laying out boxes, cards, galleries, and more.
+        </p>
+
+        <h3 class="text-lg text-blue-600 dark:text-yellow-500 font-semibold mb-2">📦 Basic Grid Example</h3>
+        <div class="grid grid-cols-3 gap-4 bg-blue-100 p-4 rounded mb-4">
+            <div class="bg-blue-300 text-center p-2 rounded">1</div>
+            <div class="bg-blue-400 text-center p-2 rounded">2</div>
+            <div class="bg-blue-500 text-center p-2 rounded">3</div>
+        </div>
+        <p class="mb-4">
+            Above uses <code>grid grid-cols-3</code> → creates 3 equal-width columns.
+        </p>
+
+        <h3 class="text-lg font-semibold text-blue-600 dark:text-yellow-500 mb-2">📐 Common Grid Classes</h3>
+        <table class="w-full text-left border border-gray-300">
+            <thead class="bg-gray-200 dark:bg-gray-800">
+            <tr>
+                <th class="p-2 border">Class</th>
+                <th class="p-2 border">Effect</th>
+                <th class="p-2 border">CSS Equivalent</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="p-2 border">grid</td><td class="p-2 border">Enables grid display</td><td class="p-2 border">display: grid;</td></tr>
+            <tr><td class="p-2 border">grid-cols-2</td><td class="p-2 border">2 equal columns</td><td class="p-2 border">grid-template-columns: repeat(2, 1fr);</td></tr>
+            <tr><td class="p-2 border">grid-cols-4</td><td class="p-2 border">4 equal columns</td><td class="p-2 border">grid-template-columns: repeat(4, 1fr);</td></tr>
+            <tr><td class="p-2 border">gap-4</td><td class="p-2 border">Adds spacing between items</td><td class="p-2 border">gap: 1rem;</td></tr>
+            <tr><td class="p-2 border">col-span-2</td><td class="p-2 border">Item spans 2 columns</td><td class="p-2 border">grid-column: span 2 / span 2;</td></tr>
+            </tbody>
+        </table>
+
+        <h3 class="text-lg text-blue-600 dark:text-yellow-500 font-semibold mt-6 mb-2">🔢 Grid with Different Column Counts</h3>
+        <div class="grid grid-cols-2 gap-4 bg-green-100 p-4 rounded mb-4">
+            <div class="bg-green-300 text-center p-2 rounded">A</div>
+            <div class="bg-green-400 text-center p-2 rounded">B</div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-2 bg-purple-100 p-4 rounded mb-4">
+            <div class="bg-purple-300 text-center p-2 rounded">1</div>
+            <div class="bg-purple-400 text-center p-2 rounded">2</div>
+            <div class="bg-purple-500 text-center p-2 rounded">3</div>
+            <div class="bg-purple-600 text-center p-2 rounded">4</div>
+        </div>
+
+        <h3 class="text-lg text-blue-600 dark:text-yellow-500 font-semibold mb-2">📍 Spanning Columns</h3>
+        <div class="grid grid-cols-3 gap-4 bg-yellow-100 p-4 rounded">
+            <div class="bg-yellow-300 p-2 text-center rounded col-span-2">Span 2 columns</div>
+            <div class="bg-yellow-400 p-2 text-center rounded">Normal</div>
+        </div>
+    </section>
+    <!-- 🔲 End of Grid Section -->
+
+
+    <div class="my-4 border-t border-b border-gray-500 dark:border-yellow-600"></div>
+    <div class="my-4 border-t border-b border-blue-500 dark:border-white"></div>
+
+
+  </div>
+  <script>
+    function toggleTheme() {
+	  document.documentElement.classList.toggle('dark');
+	}
+ 
+  </script>
+
+</body>
+</html>
