@@ -33,15 +33,16 @@
 
       table {
         @apply w-full text-left border 
-               border-gray-300;
+               border-gray-300 table-fixed;
       }
 
       thead {
         @apply bg-gray-800 text-green-100 
                 dark:text-yellow-100;
       }
-      .box {
-        @apply  space-y-10;
+      
+      td, th {
+         @apply border border-gray-400 p-2 break-words;
       }
 
       .first-line {
