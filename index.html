@@ -4,6 +4,23 @@
   <meta charset="UTF-8" />
   <title>Tailwind Lessons</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer components {
+      section {
+        @apply p-2 bg-gray-100 min-h-screen 
+               rounded text-gray-800 dark:bg-gray-800
+               dark:text-yellow-100;
+      }
+      h1, h2, h3 {
+        @apply text-xl font-semibold text-green-700 
+               dark:text-yellow-500 mb-4;
+      }
+    }
+  </style>
 	<script>
 	tailwind.config = {
 	  darkMode: 'class'
@@ -25,23 +42,20 @@
 
     </div>
 	
-	<h1 class="text-2xl font-bold my-4 text-green-700 dark:text-yellow-500">🔰 Tailwind CSS: Padding and Background Colors</h1>
+	<h1>🔰 Tailwind CSS: Padding and Background Colors</h1>
     <div class="my-8 border-t-2 border-b-2 border-gray-500 dark:border-yellow-800"></div>
 
    <!-- ✅ Padding Section -->
   
-    <section class="mb-6">
+    <section>
         <h2 class="text-xl font-black mb-2 text-green-600 dark:text-yellow-500">What does <code>p-8</code> mean?</h2>
         <ul class="list-disc list-inside">
         <li><code>p</code> = padding on <strong>all sides</strong></li>
         <li><code>8</code> = spacing unit from Tailwind’s scale</li>
         </ul>
         <p class="mt-2 text-blue-500">🔢 <code>p-8</code> = <code>padding: 2rem;</code> → Since <code>1rem = 16px</code>, that’s <strong>32px</strong> padding on all sides.</p>
-    </section>
   
 	<!-- ✅ Padding Variants -->
-  
-    <section class="mb-6">
         <h2 class="text-xl font-semibold text-green-900 dark:text-yellow-500 mb-2">🔄 Variations of <code>p</code></h2>
         <table class="w-full text-left border border-gray-300">
         <thead class="bg-gray-800 text-green-100 dark:text-yellow-100">
@@ -60,12 +74,8 @@
             <tr><td class="p-2 border">py-8</td><td class="p-2 border">padding top + bottom</td></tr>
         </tbody>
         </table>
-    </section>
-  
 	<!-- ✅ Example Box -->
-  
-    <section class="mb-6">
-        <h2 class="text-xl font-semibold dark:text-yellow-500 text-green-600 mb-2">✅ Example Box</h2>
+        <h2>✅ Example Box</h2>
         <div class="p-8 bg-yellow-600 rounded shadow-md text-blue-100">
         This box has <strong>32px padding</strong> on all sides using <code>p-8</code>.
         </div>
@@ -76,8 +86,8 @@
 
   <!-- ✅ Text Size Section -->
   
-    <section class="mb-6">
-    <h2 class="text-xl font-semibold text-green-600 dark:text-yellow-500 mb-2">What does <code>text-3xl</code> mean?</h2>
+    <section>
+    <h2>What does <code>text-3xl</code> mean?</h2>
     <ul class="list-disc list-inside">
         <li><code>text</code> = text size</li>
         <li><code>3xl</code> = size level (larger than base text)</li>
@@ -88,7 +98,7 @@
         This is <code>text-3xl</code> size text — big and bold!
     </p>
 
-    <h3 class="text-lg font-semibold text-green-600 mb-2">📏 Tailwind Text Size Scale:</h3>
+    <h3>📏 Tailwind Text Size Scale:</h3>
     <table class="w-full text-left border border-gray-300">
         <thead class="bg-gray-800 text-green-200 dark:text-yellow-100">
         <tr>
@@ -121,8 +131,8 @@
 
   <!-- ✅ Background Color Section -->
   
-  <section class="mb-6">
-	<h2 class="text-xl font-semibold text-green-600 dark:text-yellow-500 mb-2">🎨 What does <code>bg-gray-100</code> mean?</h2>
+  <section>
+	<h2>🎨 What does <code>bg-gray-100</code> mean?</h2>
 	<ul class="list-disc list-inside">
 	  <li><code>bg</code> = background</li>
 	  <li><code>gray</code> = color name</li>
@@ -135,12 +145,10 @@
 	  <div class="bg-gray-400 text-red-800 p-4 rounded shadow text-center">bg-gray-400</div>
 	  <div class="bg-gray-800 p-4 rounded shadow text-white text-center">bg-gray-800</div>
 	</div>
-  </section>
   
   <!-- ✅ Example Gray Shades Visually -->
   
-  <section class="mb-6">
-	<h2 class="text-xl font-semibold text-green-600 dark:text-yellow-500 mb-2">Example gray shades visually:</h2>
+	<h2>Example gray shades visually:</h2>
 	<table class="w-full text-left border border-gray-300">
 	  <thead class=" bg-gray-200 text-green-200 bg-gray-800 dark:text-yellow-100">
 		<tr>
@@ -183,8 +191,8 @@
     <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
   
   <!-- Border Top Example Section -->
-    <section class="mb-6">
-    <h2 class="text-xl text-green-600 font-semibold text-green-600 dark:text-yellow-500 mb-2">🧱 What does <code>border-t-2</code> mean?</h2>
+    <section>
+    <h2>🧱 What does <code>border-t-2</code> mean?</h2>
     <ul class="list-disc list-inside">
         <li><code>border</code> = apply a border</li>
         <li><code>t</code> = top side</li>
@@ -197,7 +205,7 @@
         This box has a <strong>2px top border</strong> using <code>border-t-2</code>.
     </div>
 
-    <h3 class="text-lg font-semibold text-green-600 mt-6 mb-2">📏 Tailwind Border Thickness Classes</h3>
+    <h3>📏 Tailwind Border Thickness Classes</h3>
     <table class="w-full text-left border border-gray-300">
         <thead class="bg-gray-200 text-green-200 bg-gray-800 dark:text-yellow-100">
         <tr>
@@ -220,8 +228,8 @@
 
    <!-- ✅ rounded (Rounded Corners)-->
    
-   <section class="mb-6">
-        <h2 class="text-xl font-semibold text-green-600 dark:text-yellow-500 mb-2">🔵 What does <code>rounded</code> mean?</h2>
+   <section>
+        <h2>🔵 What does <code>rounded</code> mean?</h2>
         <ul class="list-disc list-inside">
             <li><code>rounded</code> adds rounded corners to an element.</li>
             <li>It’s like <code>border-radius</code> in CSS.</li>
@@ -257,8 +265,8 @@
 
   <!-- ✅ font (Font Weights) -->
 
-   <section class="mb-6">
-        <h2 class="text-xl font-semibold text-green-600 dark:text-yellow-500 mb-2">🔤 What does <code>font</code> mean?</h2>
+   <section>
+        <h2>🔤 What does <code>font</code> mean?</h2>
         <ul class="list-disc list-inside">
             <li>Tailwind uses <code>font-*</code> classes to change font <strong>weight</strong>.</li>
         </ul>
@@ -272,7 +280,7 @@
             <p class="font-black">font-black (900)</p>
         </div>
 
-        <h3 class="text-lg font-semibold text-green-600 mt-6 dark:text-yellow-500 mb-2">📏 Font Weight Classes</h3>
+        <h3>📏 Font Weight Classes</h3>
         <table class="w-full text-left border border-gray-300">
             <thead class="bg-gray-200 dark:bg-gray-800 dark:text-yellow-100">
             <tr>
@@ -297,8 +305,8 @@
 
   <!-- ✅ x and y Axis (Horizontal & Vertical Spacing) -->
 
-   <section class="mb-6">
-        <h2 class="text-xl text-green-600 font-semibold dark:text-yellow-500 mb-2">🧭 What do <code>x</code> and <code>y</code> mean in Tailwind?</h2>
+   <section>
+        <h2>🧭 What do <code>x</code> and <code>y</code> mean in Tailwind?</h2>
         <ul class="list-disc list-inside">
             <li><code>x</code> = horizontal (left and right)</li>
             <li><code>y</code> = vertical (top and bottom)</li>
@@ -310,7 +318,7 @@
             <div class="bg-blue-300 mx-8 my-4">mx-8 my-4 (Margin Left/Right: 32px, Top/Bottom: 16px)</div>
         </div>
 
-        <h3 class="text-lg text-green-600 font-semibold mt-6 mb-2">📏 Axis Shorthand Classes</h3>
+        <h3>📏 Axis Shorthand Classes</h3>
         <table class="w-full text-left border border-gray-300">
             <thead class="bg-gray-200 text-green-200 bg-gray-800 dark:text-yellow-100">
             <tr>
@@ -332,11 +340,11 @@
     <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
 
    <!-- ✅ Position section -->
-   <section class="mb-6">
-        <h2 class="text-xl text-green-600 font-semibold dark:text-yellow-500 mb-2">📌 What does <code>position</code> do in Tailwind CSS?</h2>
+   <section>
+        <h2>📌 What does <code>position</code> do in Tailwind CSS?</h2>
         <p>Tailwind provides utility classes to control how elements are positioned on the screen.</p>
 
-        <h3 class="text-lg text-green-600 dark:bg-yellow-400 mt-4 mb-2">🧱 Position Classes</h3>
+        <h3>🧱 Position Classes</h3>
         <ul class="list-disc list-inside mb-4">
             <li><code>static</code> – default (no special positioning)</li>
             <li><code>relative</code> – positioned relative to its normal place</li>
@@ -366,7 +374,7 @@
             </div>
         </div>
 
-        <h3 class="text-lg font-semibold text-blue-600 mt-6 mb-2">📋 Summary Table</h3>
+        <h3>📋 Summary Table</h3>
         <table class="w-full text-left border border-gray-300">
             <thead class="bg-gray-200 text-green-200 bg-gray-800 dark:text-yellow-100">
             <tr>
@@ -391,8 +399,8 @@
     <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
 
      <!-- ✅ End with Tailwind flex Lesson Section (with examples & table) -->
-    <section class="mb-6">
-        <h2 class="text-xl text-green-600 font-semibold dark:text-yellow-500 mb-2">🧱 What are <code>block</code>, <code>inline</code>, and <code>inline-block</code> in Tailwind?</h2>
+    <section>
+        <h2>🧱 What are <code>block</code>, <code>inline</code>, and <code>inline-block</code> in Tailwind?</h2>
         <p>These utility classes control how elements flow and wrap in the layout. Each has different behavior.</p>
 
         <h3 class="text-lg font-semibold mt-4 mb-2">📦 Visual Examples</h3>
@@ -418,7 +426,7 @@
             <span class="inline-block bg-yellow-400 p-2 rounded">Inline-Block 2</span>
         </div>
 
-        <h3 class="text-lg font-semibold text-green-600 dark:text-yellow-500 mt-6 mb-2">📋 Summary Table</h3>
+        <h3>📋 Summary Table</h3>
         <table class="w-full text-left border border-gray-300">
             <thead class="bg-gray-200 dark:bg-gray-800 dark:text-yellow-100">
             <tr>
@@ -453,8 +461,8 @@
     <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
 
    <!--   ✅ Tailwind block, inline, and inline-block Lesson Section -->
-   <section class="mb-6">
-        <h2 class="text-xl text-green-600 font-semibold dark:text-yellow-500 mb-2">🧱 What does <code>flex</code> mean in Tailwind CSS?</h2>
+   <section>
+        <h2>🧱 What does <code>flex</code> mean in Tailwind CSS?</h2>
         <p>Tailwind uses the <code>flex</code> utility to apply <strong>flexbox layout</strong> to elements. Flexbox helps align, distribute, and arrange elements responsively.</p>
 
         <h3 class="text-lg text-green-600 dark:text-yellow-800 font-semibold mt-4 mb-2">📦 Basic Usage</h3>
@@ -523,7 +531,7 @@
     <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
    
     <!--✅ Tailwind flex Lesson Section (with examples & table)-->
-    <section class="mb-6">
+    <section>
         <h2 class="text-xl font-semibold text-green-600 dark:text-yellow-500 mb-2">🔲 What is <code>grid</code> in Tailwind CSS?</h2>
         <p class="mb-4">
             Tailwind’s <code>grid</code> utility enables you to create powerful and responsive layouts using CSS Grid.
@@ -540,7 +548,7 @@
             Above uses <code>grid grid-cols-3</code> → creates 3 equal-width columns.
         </p>
 
-        <h3 class="text-lg font-semibold text-green-600 dark:text-yellow-500 mb-2">📐 Common Grid Classes</h3>
+        <h3>📐 Common Grid Classes</h3>
         <table class="w-full text-left border border-gray-300">
             <thead class="bg-gray-200 dark:bg-gray-800 dark:text-yellow-100">
             <tr>
@@ -558,7 +566,7 @@
             </tbody>
         </table>
 
-        <h3 class="text-lg text-green-600 dark:text-yellow-500 font-semibold mt-6 mb-2">🔢 Grid with Different Column Counts</h3>
+        <h3>🔢 Grid with Different Column Counts</h3>
         <div class="grid grid-cols-2 gap-4 bg-green-100 p-4 rounded mb-4">
             <div class="bg-green-300 text-center p-2 rounded">A</div>
             <div class="bg-green-400 text-center p-2 rounded">B</div>
@@ -583,8 +591,8 @@
     <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
 
      <!-- ✅ Tailwind leading-relaxed Lesson Section -->
-    <section class="mb-6">
-        <h2 class="text-xl font-semibold mb-2">🔍 What does <code>leading-relaxed</code> mean in Tailwind CSS?</h2>
+    <section>
+        <h2>🔍 What does <code>leading-relaxed</code> mean in Tailwind CSS?</h2>
         <p class="mb-2">
             The class <code>leading-relaxed</code> sets the <strong>line height</strong> (the vertical space between lines of text) to make content easier to read.
         </p>
@@ -603,7 +611,7 @@
             🧾 This is an example paragraph using <code>leading-relaxed</code>. Notice how the lines are comfortably spaced, which improves readability for longer content such as articles, documentation, or educational materials.
         </div>
 
-        <h3 class="text-lg font-semibold mb-2">📚 Common <code>leading-*</code> values in Tailwind:</h3>
+        <h3>📚 Common <code>leading-*</code> values in Tailwind:</h3>
         <table class="w-full text-left border border-gray-300">
             <thead class="bg-gray-200">
             <tr>
@@ -622,7 +630,7 @@
             </tbody>
         </table>
 
-        <h3 class="text-lg font-semibold mt-4 mb-2">🧠 Why use <code>leading-relaxed</code>?</h3>
+        <h3>🧠 Why use <code>leading-relaxed</code>?</h3>
         <ul class="list-disc list-inside">
             <li>Improves paragraph readability</li>
             <li>Reduces visual crowding between lines</li>
@@ -635,13 +643,13 @@
     <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
 
 <!-- ✅ Tailwind shadow Lesson Section -->
-    <section class="mb-6">
-        <h2 class="text-xl font-semibold mb-2">🌑 What is <code>shadow</code> in Tailwind CSS?</h2>
+    <section>
+        <h2>🌑 What is <code>shadow</code> in Tailwind CSS?</h2>
         <p class="mb-4">
             Tailwind provides utility classes to easily apply different levels of <strong>box shadow</strong> to your elements. Shadows can enhance the appearance by adding depth and focus.
         </p>
 
-        <h3 class="text-lg font-semibold mb-2">✅ Common Tailwind Box Shadow Classes</h3>
+        <h3>✅ Common Tailwind Box Shadow Classes</h3>
         <table class="w-full text-left border border-gray-300 mb-4">
             <thead class="bg-gray-200">
             <tr>
@@ -683,8 +691,8 @@
 
     <!-- ✅ Tailwind CSS hover, focus, and transform Lesson Section -->
 
-    <section class="mb-6">
-        <h2 class="text-xl font-semibold mb-4">🖱️ Tailwind CSS: <code>hover</code>, <code>focus</code>, and <code>transform</code></h2>
+    <section>
+        <h2>🖱️ Tailwind CSS: <code>hover</code>, <code>focus</code>, and <code>transform</code></h2>
 
         <p class="mb-4">
             Tailwind allows you to add interactive effects using pseudo-classes like <code>hover</code> and <code>focus</code>, and also animate objects using <code>transform</code>.
@@ -720,7 +728,7 @@
         </ul>
 
         <!-- Extra Table -->
-        <h3 class="text-lg font-semibold mb-2">🧰 Common Transform Utilities</h3>
+        <h3>🧰 Common Transform Utilities</h3>
         <table class="w-full text-left border border-gray-300 mb-4">
             <thead class="bg-gray-200">
             <tr>
@@ -750,7 +758,7 @@
 
     <!-- ✅ Tailwind Responsive / Screen Size Lesson Section -->
 
-    <section class="mb-6">
+    <section>
     <h2 class="text-xl font-semibold mb-2">📱 Tailwind CSS Responsive Breakpoints (Screen Sizes)</h2>
 
     <p class="mb-4">
@@ -799,7 +807,7 @@
 
 <!-- ✅ Tailwind Visibility Utilities Only -->
 
-<section class="mb-6">
+<section>
   <h2 class="text-xl font-semibold mb-4">🙈 Built-in Visibility Utility Classes in Tailwind CSS</h2>
 
   <p class="mb-4">
@@ -868,7 +876,7 @@
     <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
     <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
 
-    <section class="p-6 bg-gray-100 min-h-screen text-gray-800">
+    <section>
   <div class="max-w-4xl mx-auto space-y-10">
     <h1 class="text-3xl font-bold text-center text-gray-900">Understanding <code>md</code> in Tailwind CSS</h1>
 
@@ -961,14 +969,14 @@
 <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
 <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
 
-<section class="p-6 bg-gray-100 min-h-screen text-gray-800">
+<section>
   <div class="max-w-3xl mx-auto space-y-10">
     <h1 class="text-3xl font-bold text-center text-gray-900">
       Understanding <code>space-y-6</code> in Tailwind CSS
     </h1>
 
-    <!-- 🔹 What is space-y-6 -->
-    <div class="bg-white rounded-lg shadow p-6">
+    <!-- 🔹 What is space-y-6 1rem = 16 px, 24 -->
+    <div class="rounded-lg shadow p-6">
       <h2 class="text-2xl font-semibold text-blue-700 mb-4">🔹 What is <code>space-y-6</code>?</h2>
       <p class="mb-4">
         The class <code>space-y-6</code> is used to add <strong>vertical spacing</strong> between <em>direct child elements</em> of a parent container.
@@ -986,7 +994,7 @@
     </div>
 
     <!-- 🧪 Example -->
-    <div class="bg-white rounded-lg shadow p-6">
+    <div class="rounded-lg shadow p-6">
       <h2 class="text-2xl font-semibold text-green-700 mb-4">🧪 Example</h2>
       <p class="mb-4">The following layout stacks three boxes vertically with 24px spacing between them using <code>space-y-6</code>:</p>
 
@@ -998,7 +1006,7 @@
     </div>
 
     <!-- 📏 Spacing Scale -->
-    <div class="bg-white rounded-lg shadow p-6">
+    <div class="rounded-lg shadow p-6">
       <h2 class="text-2xl font-semibold text-purple-700 mb-4">📏 Tailwind Spacing Scale</h2>
       <p class="mb-4">You can adjust spacing with different values like <code>space-y-1</code>, <code>space-y-2</code>, etc.</p>
       <div class="overflow-x-auto">
@@ -1023,8 +1031,8 @@
     </div>
 
     <!-- 🔁 Horizontal -->
-    <div class="bg-white rounded-lg shadow p-6">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">🔁 Bonus: Horizontal Spacing</h2>
+    <div class="rounded-lg shadow p-6">
+      <h2>🔁 Bonus: Horizontal Spacing</h2>
       <p class="mb-4">
         You can also use <code>space-x-6</code> to add horizontal spacing between inline elements, like buttons or columns.
       </p>
