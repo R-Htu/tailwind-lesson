@@ -10,19 +10,47 @@
     @tailwind utilities;
 
     @layer components {
+
       section {
-        @apply p-2 bg-gray-100 min-h-screen 
+        @apply p-2 bg-gray-200 min-h-screen 
                rounded text-gray-800 dark:bg-gray-800
-               dark:text-yellow-100;
+               dark:text-yellow-100 max-w-4xl mx-auto;
       }
       h1 {
         @apply text-2xl font-bold text-green-700 
+               dark:text-yellow-500 my-5;
+      }
+
+       h2 {
+        @apply text-xl font-bold text-green-900 
                dark:text-yellow-500 my-4;
       }
 
-      h2, h3 {
-        @apply text-xl font-bold text-green-900 
+      h3 {
+        @apply text-lg font-bold text-green-600 
                dark:text-yellow-500 my-4;
+      }
+
+      table {
+        @apply w-full text-left border 
+               border-gray-300;
+      }
+
+      thead {
+        @apply bg-gray-800 text-green-100 
+                dark:text-yellow-100;
+      }
+      .box {
+        @apply  space-y-10;
+      }
+
+      .first-line {
+        @apply my-4 border-t border-b border-black 
+               dark:border-yellow-600 max-w-4xl mx-auto;
+      }
+      .second-line {
+        @apply my-4 border-t border-b border-green-500 
+               dark:border-white max-w-4xl mx-auto;
       }
     }
   </style>
@@ -53,7 +81,8 @@
    <!-- ✅ Padding Section -->
   
     <section>
-        <h2>What does <code>p-8</code> mean?</h2>
+      <div class="box">
+         <h2>What does <code>p-8</code> mean?</h2>
         <ul class="list-disc list-inside">
         <li><code>p</code> = padding on <strong>all sides</strong></li>
         <li><code>8</code> = spacing unit from Tailwind’s scale</li>
@@ -61,9 +90,9 @@
         <p class="mt-2 text-blue-500">🔢 <code>p-8</code> = <code>padding: 2rem;</code> → Since <code>1rem = 16px</code>, that’s <strong>32px</strong> padding on all sides.</p>
   
 	<!-- ✅ Padding Variants -->
-        <h2 class="text-xl font-semibold text-green-900 dark:text-yellow-500 mb-2">🔄 Variations of <code>p</code></h2>
-        <table class="w-full text-left border border-gray-300">
-        <thead class="bg-gray-800 text-green-100 dark:text-yellow-100">
+        <h2>🔄 Variations of <code>p</code></h2>
+        <table>
+        <thead>
             <tr>
             <th class="p-2 border">Class</th>
             <th class="p-2 border">Meaning</th>
@@ -84,10 +113,11 @@
         <div class="p-8 bg-yellow-600 rounded shadow-md text-blue-100">
         This box has <strong>32px padding</strong> on all sides using <code>p-8</code>.
         </div>
+      </div>
     </section>
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
   <!-- ✅ Text Size Section -->
   
@@ -104,8 +134,8 @@
     </p>
 
     <h3>📏 Tailwind Text Size Scale:</h3>
-    <table class="w-full text-left border border-gray-300">
-        <thead class="bg-gray-800 text-green-200 dark:text-yellow-100">
+    <table>
+        <thead>
         <tr>
             <th class="p-2 border">Class</th>
             <th class="p-2 border">Font Size (rem)</th>
@@ -131,8 +161,8 @@
     </table>
     </section>
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
   <!-- ✅ Background Color Section -->
   
@@ -154,8 +184,8 @@
   <!-- ✅ Example Gray Shades Visually -->
   
 	<h2>Example gray shades visually:</h2>
-	<table class="w-full text-left border border-gray-300">
-	  <thead class=" bg-gray-200 text-green-200 bg-gray-800 dark:text-yellow-100">
+	<table>
+	  <thead>
 		<tr>
 		  <th class="p-2 border">Shade</th>
 		  <th class="p-2 border">Example Color</th>
@@ -192,8 +222,8 @@
 	</table>
   </section>
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
   
   <!-- Border Top Example Section -->
     <section>
@@ -211,8 +241,8 @@
     </div>
 
     <h3>📏 Tailwind Border Thickness Classes</h3>
-    <table class="w-full text-left border border-gray-300">
-        <thead class="bg-gray-200 text-green-200 bg-gray-800 dark:text-yellow-100">
+    <table>
+        <thead>
         <tr>
             <th class="p-2 border">Class</th>
             <th class="p-2 border">Thickness</th>
@@ -228,8 +258,8 @@
     </table>
     </section>
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
    <!-- ✅ rounded (Rounded Corners)-->
    
@@ -245,9 +275,9 @@
             <div class="p-4 bg-yellow-300 rounded-full text-center shadow">rounded-full</div>
         </div>
 
-        <h3 class="text-lg text-green-600 font-semibold mt-6 mb-2">📏 Common Rounded Classes</h3>
-        <table class="w-full text-left border border-gray-300">
-            <thead class="bg-gray-200 text-green-200 bg-gray-800 dark:bg-yellow-100">
+        <h3>📏 Common Rounded Classes</h3>
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border dark:text-yellow-100">Class</th>
                 <th class="p-2 border dark:text-yellow-100">Effect</th>
@@ -265,8 +295,8 @@
 
 
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
   <!-- ✅ font (Font Weights) -->
 
@@ -286,8 +316,8 @@
         </div>
 
         <h3>📏 Font Weight Classes</h3>
-        <table class="w-full text-left border border-gray-300">
-            <thead class="bg-gray-200 dark:bg-gray-800 dark:text-yellow-100">
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border">Class</th>
                 <th class="p-2 border">Weight</th>
@@ -305,8 +335,8 @@
     </section>
 
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
   <!-- ✅ x and y Axis (Horizontal & Vertical Spacing) -->
 
@@ -324,8 +354,8 @@
         </div>
 
         <h3>📏 Axis Shorthand Classes</h3>
-        <table class="w-full text-left border border-gray-300">
-            <thead class="bg-gray-200 text-green-200 bg-gray-800 dark:text-yellow-100">
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border">Class</th>
                 <th class="p-2 border">Effect</th>
@@ -341,8 +371,8 @@
     </section>
 
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
    <!-- ✅ Position section -->
    <section>
@@ -380,8 +410,8 @@
         </div>
 
         <h3>📋 Summary Table</h3>
-        <table class="w-full text-left border border-gray-300">
-            <thead class="bg-gray-200 text-green-200 bg-gray-800 dark:text-yellow-100">
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border">Class</th>
                 <th class="p-2 border">Meaning</th>
@@ -400,8 +430,8 @@
     <!-- 📍 End of Positioning Section -->
 
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
      <!-- ✅ End with Tailwind flex Lesson Section (with examples & table) -->
     <section>
@@ -432,8 +462,8 @@
         </div>
 
         <h3>📋 Summary Table</h3>
-        <table class="w-full text-left border border-gray-300">
-            <thead class="bg-gray-200 dark:bg-gray-800 dark:text-yellow-100">
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border">Class</th>
                 <th class="p-2 border">CSS</th>
@@ -462,8 +492,8 @@
    <!-- ✅ End with Tailwind flex Lesson Section (with examples & table) -->
 
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
    <!--   ✅ Tailwind block, inline, and inline-block Lesson Section -->
    <section>
@@ -494,8 +524,8 @@
         <p class="mt-2 text-blue-600">🔸 <code>flex-col</code> stacks items vertically.</p>
 
         <h3 class="text-lg font-semibold text-blue-600 dark:text-yellow-500 mt-6 mb-2">📋 Display Classes</h3>
-        <table class="w-full text-left border border-gray-300">
-            <thead class="bg-gray-200 text-green-200 bg-gray-800 dark:text-yellow-100">
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border">Class</th>
                 <th class="p-2 border">Effect</th>
@@ -512,9 +542,9 @@
             </tbody>
         </table>
 
-        <h3 class="text-lg text-green-600 font-semibold mt-6 dark:text-yellow-500 mb-2">📍 Direction Classes</h3>
-        <table class="w-full text-left border border-gray-300">
-            <thead class="bg-gray-200 dark:bg-gray-800 dark:text-yellow-100">
+        <h3>📍 Direction Classes</h3>
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border">Class</th>
                 <th class="p-2 border">Direction</th>
@@ -532,18 +562,18 @@
     <!--✅ End with ✅ Tailwind block, inline, and inline-block Lesson Section-->
 
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
    
     <!--✅ Tailwind flex Lesson Section (with examples & table)-->
     <section>
-        <h2 class="text-xl font-semibold text-green-600 dark:text-yellow-500 mb-2">🔲 What is <code>grid</code> in Tailwind CSS?</h2>
+        <h2>🔲 What is <code>grid</code> in Tailwind CSS?</h2>
         <p class="mb-4">
             Tailwind’s <code>grid</code> utility enables you to create powerful and responsive layouts using CSS Grid.
             It's great for laying out boxes, cards, galleries, and more.
         </p>
 
-        <h3 class="text-lg text-green-600 dark:text-yellow-500 font-semibold mb-2">📦 Basic Grid Example</h3>
+        <h3>📦 Basic Grid Example</h3>
         <div class="grid grid-cols-3 gap-4 bg-blue-100 p-4 rounded mb-4">
             <div class="bg-blue-300 text-center p-2 rounded">1</div>
             <div class="bg-blue-400 text-center p-2 rounded">2</div>
@@ -554,8 +584,8 @@
         </p>
 
         <h3>📐 Common Grid Classes</h3>
-        <table class="w-full text-left border border-gray-300">
-            <thead class="bg-gray-200 dark:bg-gray-800 dark:text-yellow-100">
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border">Class</th>
                 <th class="p-2 border">Effect</th>
@@ -584,7 +614,7 @@
             <div class="bg-purple-600 text-center p-2 rounded">4</div>
         </div>
 
-        <h3 class="text-lg text-green-600 dark:text-yellow-500 font-semibold mb-2">📍 Spanning Columns</h3>
+        <h3>📍 Spanning Columns</h3>
         <div class="grid grid-cols-3 gap-4 bg-yellow-100 p-4 rounded">
             <div class="bg-yellow-300 p-2 text-center rounded col-span-2">Span 2 columns</div>
             <div class="bg-yellow-400 p-2 text-center rounded">Normal</div>
@@ -592,8 +622,8 @@
     </section>
     <!-- 🔲 End of Grid Section -->
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
      <!-- ✅ Tailwind leading-relaxed Lesson Section -->
     <section>
@@ -617,8 +647,8 @@
         </div>
 
         <h3>📚 Common <code>leading-*</code> values in Tailwind:</h3>
-        <table class="w-full text-left border border-gray-300">
-            <thead class="bg-gray-200">
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border">Class</th>
                 <th class="p-2 border">Line Height</th>
@@ -644,8 +674,8 @@
         </section>
         <!-- 🔍 End of Line Height Section -->
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
 <!-- ✅ Tailwind shadow Lesson Section -->
     <section>
@@ -655,8 +685,8 @@
         </p>
 
         <h3>✅ Common Tailwind Box Shadow Classes</h3>
-        <table class="w-full text-left border border-gray-300 mb-4">
-            <thead class="bg-gray-200">
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border">Class</th>
                 <th class="p-2 border">Description</th>
@@ -691,8 +721,8 @@
     </section>
     <!-- 🌑 End of Shadow Section -->
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
     <!-- ✅ Tailwind CSS hover, focus, and transform Lesson Section -->
 
@@ -704,7 +734,7 @@
         </p>
 
         <!-- Hover Section -->
-        <h3 class="text-lg font-semibold mb-2">🎯 <code>hover:</code> — When mouse hovers over an element</h3>
+        <h3>🎯 <code>hover:</code> — When mouse hovers over an element</h3>
         <p class="mb-2">
             Use <code>hover:</code> before any utility to apply styles on hover.
         </p>
@@ -714,7 +744,7 @@
         <p class="mb-4"><code>hover:bg-blue-700</code> means background turns dark blue when you hover.</p>
 
         <!-- Focus Section -->
-        <h3 class="text-lg font-semibold mb-2">🔍 <code>focus:</code> — When input is clicked or selected</h3>
+        <h3>🔍 <code>focus:</code> — When input is clicked or selected</h3>
         <input type="text" placeholder="Focus me" class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4 block" />
         <p class="mb-4"><code>focus:ring-2</code> and <code>focus:ring-blue-500</code> add a blue border ring when focused.</p>
 
@@ -734,8 +764,8 @@
 
         <!-- Extra Table -->
         <h3>🧰 Common Transform Utilities</h3>
-        <table class="w-full text-left border border-gray-300 mb-4">
-            <thead class="bg-gray-200">
+        <table>
+            <thead>
             <tr>
                 <th class="p-2 border">Class</th>
                 <th class="p-2 border">Effect</th>
@@ -758,297 +788,298 @@
     </section>
     <!-- 🖱️ End of Hover, Focus, Transform Section -->
 
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
     <!-- ✅ Tailwind Responsive / Screen Size Lesson Section -->
 
     <section>
-    <h2 class="text-xl font-semibold mb-2">📱 Tailwind CSS Responsive Breakpoints (Screen Sizes)</h2>
+        <h2>📱 Tailwind CSS Responsive Breakpoints (Screen Sizes)</h2>
 
-    <p class="mb-4">
-        Tailwind makes responsive design super easy using <strong>mobile-first breakpoints</strong>. You can apply styles that change based on the device’s screen width.
-    </p>
+        <p class="mb-4">
+            Tailwind makes responsive design super easy using <strong>mobile-first breakpoints</strong>. You can apply styles that change based on the device’s screen width.
+        </p>
 
-    <h3 class="text-lg font-semibold mb-2">🔹 Format:</h3>
-    <p><code>screen-size:class</code></p>
-    <p class="mb-4">For example: <code>md:text-xl</code> means "apply text-xl when the screen is medium or larger".</p>
+        <h3>🔹 Format:</h3>
+        <p><code>screen-size:class</code></p>
+        <p class="mb-4">For example: <code>md:text-xl</code> means "apply text-xl when the screen is medium or larger".</p>
 
-    <h3 class="text-lg font-semibold mb-2">📐 Default Breakpoints in Tailwind:</h3>
-    <table class="w-full text-left border border-gray-300 mb-4">
-        <thead class="bg-gray-200">
-        <tr>
-            <th class="p-2 border">Prefix</th>
-            <th class="p-2 border">Min Width</th>
-            <th class="p-2 border">Device Type</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td class="p-2 border">sm</td><td class="p-2 border">640px</td><td class="p-2 border">Small devices (e.g., phones)</td></tr>
-        <tr><td class="p-2 border">md</td><td class="p-2 border">768px</td><td class="p-2 border">Medium devices (e.g., tablets)</td></tr>
-        <tr><td class="p-2 border">lg</td><td class="p-2 border">1024px</td><td class="p-2 border">Large devices (e.g., laptops)</td></tr>
-        <tr><td class="p-2 border">xl</td><td class="p-2 border">1280px</td><td class="p-2 border">Extra large (e.g., desktops)</td></tr>
-        <tr><td class="p-2 border">2xl</td><td class="p-2 border">1536px</td><td class="p-2 border">Big screens (e.g., TVs, monitors)</td></tr>
-        </tbody>
-    </table>
+        <h3>📐 Default Breakpoints in Tailwind:</h3>
+        <table>
+            <thead>
+            <tr>
+                <th class="p-2 border">Prefix</th>
+                <th class="p-2 border">Min Width</th>
+                <th class="p-2 border">Device Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="p-2 border">sm</td><td class="p-2 border">640px</td><td class="p-2 border">Small devices (e.g., phones)</td></tr>
+            <tr><td class="p-2 border">md</td><td class="p-2 border">768px</td><td class="p-2 border">Medium devices (e.g., tablets)</td></tr>
+            <tr><td class="p-2 border">lg</td><td class="p-2 border">1024px</td><td class="p-2 border">Large devices (e.g., laptops)</td></tr>
+            <tr><td class="p-2 border">xl</td><td class="p-2 border">1280px</td><td class="p-2 border">Extra large (e.g., desktops)</td></tr>
+            <tr><td class="p-2 border">2xl</td><td class="p-2 border">1536px</td><td class="p-2 border">Big screens (e.g., TVs, monitors)</td></tr>
+            </tbody>
+        </table>
 
-    <h3 class="text-lg font-semibold mb-2">🎯 Example</h3>
-    <p class="mb-2">This heading will be small on phones, but grow on bigger screens:</p>
-    <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl text-blue-600 font-bold">
-        🌟 I grow bigger on larger screens!
-    </h2>
+        <h3>🎯 Example</h3>
+        <p class="mb-2">This heading will be small on phones, but grow on bigger screens:</p>
+        <h2>
+            🌟 I grow bigger on larger screens!
+        </h2>
 
-    <h3 class="text-lg font-semibold mt-6 mb-2">🧠 Tips:</h3>
-    <ul class="list-disc list-inside">
-        <li>Tailwind is mobile-first: base styles come first, then add larger screen styles.</li>
-        <li>You can use any utility with breakpoints: <code>px-4</code>, <code>text-center</code>, <code>hidden</code>, etc.</li>
-        <li>Combine with flex/grid for beautiful responsive layouts!</li>
-    </ul>
-</section>
-<!-- 📱 End of Responsive Screen Sizes Section -->
-
-<div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-<div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
-
-<!-- ✅ Tailwind Visibility Utilities Only -->
-
-<section>
-  <h2 class="text-xl font-semibold mb-4">🙈 Built-in Visibility Utility Classes in Tailwind CSS</h2>
-
-  <p class="mb-4">
-    Tailwind CSS includes <strong>built-in utility classes</strong> to control the visibility of elements — without writing custom CSS.
-  </p>
-
-  <!-- Hidden -->
-  <h3 class="text-lg font-semibold mb-2"><code>hidden</code></h3>
-  <p class="mb-2">
-    The <code>hidden</code> class completely removes the element from the layout by applying <code>display: none;</code>.
-  </p>
-  <div class="hidden bg-red-200 p-4 rounded mb-4">
-    😶 You can't see me because I'm <code>hidden</code>!
-  </div>
-
-  <!-- Visible / Invisible -->
-  <h3 class="text-lg font-semibold mb-2"><code>invisible</code> vs. <code>visible</code></h3>
-  <p class="mb-2">
-    Use <code>invisible</code> to hide an element but still keep its space in the layout. Use <code>visible</code> to reverse it.
-  </p>
-  <div class="flex gap-4 mb-4">
-    <div class="bg-green-200 p-4 rounded visible">I'm visible</div>
-    <div class="bg-yellow-200 p-4 rounded invisible">You can't see me but I take space</div>
-  </div>
-  <p class="mb-4"><code>invisible</code> = <code>visibility: hidden;</code> &nbsp;&nbsp; <code>visible</code> = <code>visibility: visible;</code></p>
-
-  <!-- Responsive Example -->
-  <h3 class="text-lg font-semibold mb-2">📱 Responsive Visibility</h3>
-  <p class="mb-2">
-    You can use responsive prefixes like <code>md:hidden</code> or <code>lg:visible</code> to show/hide elements on specific screen sizes.
-  </p>
-  <div class="bg-blue-200 p-4 rounded mb-4 md:hidden">
-    I disappear on medium screens and above (using <code>md:hidden</code>).
-  </div>
-
-  <!-- Summary Table -->
-  <h3 class="text-lg font-semibold mb-2">📋 Summary of Visibility Utilities</h3>
-  <table class="w-full text-left border border-gray-300 mb-4">
-    <thead class="bg-gray-200">
-      <tr>
-        <th class="p-2 border">Class</th>
-        <th class="p-2 border">Effect</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="p-2 border"><code>hidden</code></td>
-        <td class="p-2 border">Removes from layout (<code>display: none;</code>)</td>
-      </tr>
-      <tr>
-        <td class="p-2 border"><code>invisible</code></td>
-        <td class="p-2 border">Hidden but keeps space (<code>visibility: hidden;</code>)</td>
-      </tr>
-      <tr>
-        <td class="p-2 border"><code>visible</code></td>
-        <td class="p-2 border">Makes invisible elements visible again</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p class="italic text-sm text-gray-400">💡 Tip: Combine with responsive prefixes like <code>md:hidden</code>, <code>sm:invisible</code>, or <code>lg:visible</code> to control visibility across screen sizes.</p>
-</section>
-
-<!-- 🙈 End of Built-in Utility Class Section -->
- 
-<div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-<div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
-
-<section>
-  <div class="max-w-4xl mx-auto space-y-10">
-    <h1 class="text-3xl font-bold text-center text-gray-900">Understanding <code>md</code> in Tailwind CSS</h1>
-
-    <!-- 🟢 md as a Breakpoint -->
-    <div class="rounded shadow p-6">
-      <h2 class="text-2xl font-semibold text-green-700 mb-4">🟢 1. <code>md</code> as a Breakpoint (for responsiveness)</h2>
-      <p class="mb-4">When you see <code>md:</code> at the beginning of a class, it means:</p>
-      <blockquote class="border-l-4 border-green-500 pl-4 italic text-gray-700 mb-4">
-        "Apply this style starting from medium screens (≥768px width)."
-      </blockquote>
-
-      <h3 class="font-semibold mb-2">🔹 Example:</h3>
-      <div class="mb-4">
-        <code class="block bg-gray-200 dark:bg-gray-700 p-2 rounded mb-1">&lt;div class="bg-red-500 md:bg-green-500"&gt;</code>
-        <ul class="list-disc pl-6 text-sm text-gray-700">
-          <li>On small screens → <code>bg-red-500</code></li>
-          <li>On screens ≥ 768px → <code>bg-green-500</code></li>
+        <h3>🧠 Tips:</h3>
+        <ul class="list-disc list-inside">
+            <li>Tailwind is mobile-first: base styles come first, then add larger screen styles.</li>
+            <li>You can use any utility with breakpoints: <code>px-4</code>, <code>text-center</code>, <code>hidden</code>, etc.</li>
+            <li>Combine with flex/grid for beautiful responsive layouts!</li>
         </ul>
+    </section>
+    <!-- 📱 End of Responsive Screen Sizes Section -->
+
+    <div class="first-line"></div>
+    <div class="second-line"></div>
+
+    <!-- ✅ Tailwind Visibility Utilities Only -->
+
+    <section>
+      <h2>🙈 Built-in Visibility Utility Classes in Tailwind CSS</h2>
+
+      <p class="mb-4">
+        Tailwind CSS includes <strong>built-in utility classes</strong> to control the visibility of elements — without writing custom CSS.
+      </p>
+
+      <!-- Hidden -->
+      <h3><code>hidden</code></h3>
+      <p class="mb-2">
+        The <code>hidden</code> class completely removes the element from the layout by applying <code>display: none;</code>.
+      </p>
+      <div class="hidden bg-red-200 p-4 rounded mb-4">
+        😶 You can't see me because I'm <code>hidden</code>!
       </div>
 
-      <h3 class="font-semibold mb-2">📏 Tailwind's Default Breakpoints:</h3>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm text-left border border-collapse border-gray-300">
-          <thead class="bg-gray-200 dark:bg-gray-700">
-            <tr>
-              <th class="border px-3 py-1">Prefix</th>
-              <th class="border px-3 py-1">Min Width</th>
-              <th class="border px-3 py-1">Device Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="border px-3 py-1">sm</td><td class="border px-3 py-1">640px</td><td class="border px-3 py-1">Small phones</td></tr>
-            <tr><td class="border px-3 py-1">md</td><td class="border px-3 py-1">768px</td><td class="border px-3 py-1">Tablets / Small laptops</td></tr>
-            <tr><td class="border px-3 py-1">lg</td><td class="border px-3 py-1">1024px</td><td class="border px-3 py-1">Laptops / Desktops</td></tr>
-            <tr><td class="border px-3 py-1">xl</td><td class="border px-3 py-1">1280px</td><td class="border px-3 py-1">Large desktops</td></tr>
-            <tr><td class="border px-3 py-1">2xl</td><td class="border px-3 py-1">1536px</td><td class="border px-3 py-1">Very large screens</td></tr>
-          </tbody>
-        </table>
+      <!-- Visible / Invisible -->
+      <h3 class="text-lg font-semibold mb-2"><code>invisible</code> vs. <code>visible</code></h3>
+      <p class="mb-2">
+        Use <code>invisible</code> to hide an element but still keep its space in the layout. Use <code>visible</code> to reverse it.
+      </p>
+      <div class="flex gap-4 mb-4">
+        <div class="bg-green-200 p-4 rounded visible">I'm visible</div>
+        <div class="bg-yellow-200 p-4 rounded invisible">You can't see me but I take space</div>
       </div>
-    </div>
+      <p class="mb-4"><code>invisible</code> = <code>visibility: hidden;</code> &nbsp;&nbsp; <code>visible</code> = <code>visibility: visible;</code></p>
 
-    <!-- 🔵 md as a Size Value -->
-    <div class="rounded-lg shadow p-6">
-      <h2 class="text-2xl font-semibold text-blue-700 mb-4">🔵 2. <code>md</code> as a Size Value (like in <code>max-w-md</code>)</h2>
-      <p class="mb-4">In utility classes that control size (e.g., width, max-width, spacing), <code>md</code> refers to a predefined size value.</p>
-
-      <h3 class="font-semibold mb-2">🔹 Example:</h3>
-      <code class="block bg-gray-200 p-2 rounded mb-2">&lt;div class="max-w-md"&gt;</code>
-      <p class="mb-4">This sets:</p>
-      <code class="block bg-gray-100 p-2 rounded text-sm">max-width: 28rem; <span class="text-gray-500">/* which is 448px */</span></code>
-
-      <h3 class="font-semibold mt-4 mb-2">📏 Tailwind width scale (common values):</h3>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm text-left border border-collapse border-gray-300">
-          <thead class="bg-gray-200">
-            <tr>
-              <th class="border px-3 py-1">Class</th>
-              <th class="border px-3 py-1">Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="border px-3 py-1">max-w-sm</td><td class="border px-3 py-1">24rem (384px)</td></tr>
-            <tr><td class="border px-3 py-1">max-w-md</td><td class="border px-3 py-1">28rem (448px)</td></tr>
-            <tr><td class="border px-3 py-1">max-w-lg</td><td class="border px-3 py-1">32rem (512px)</td></tr>
-            <tr><td class="border px-3 py-1">max-w-xl</td><td class="border px-3 py-1">36rem (576px)</td></tr>
-          </tbody>
-        </table>
+      <!-- Responsive Example -->
+      <h3>📱 Responsive Visibility</h3>
+      <p class="mb-2">
+        You can use responsive prefixes like <code>md:hidden</code> or <code>lg:visible</code> to show/hide elements on specific screen sizes.
+      </p>
+      <div class="bg-blue-200 p-4 rounded mb-4 md:hidden">
+        I disappear on medium screens and above (using <code>md:hidden</code>).
       </div>
-    </div>
 
-    <!-- Summary -->
-    <div class="bg-yellow-100 dark:bg-gray-700 rounded-lg p-4 shadow-inner">
-      <h3 class="font-bold text-lg mb-2">🧠 Summary:</h3>
-      <table class="text-sm w-full border border-collapse border-gray-300">
-        <thead class="bg-yellow-200">
+      <!-- Summary Table -->
+      <h3>📋 Summary of Visibility Utilities</h3>
+      <table>
+        <thead>
           <tr>
-            <th class="border px-3 py-1">Use Case</th>
-            <th class="border px-3 py-1">Meaning</th>
+            <th class="p-2 border">Class</th>
+            <th class="p-2 border">Effect</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="border px-3 py-1"><code>md:</code> (prefix)</td><td class="border px-3 py-1">Breakpoint ≥768px</td></tr>
-          <tr><td class="border px-3 py-1"><code>max-w-md</code></td><td class="border px-3 py-1">Size = 28rem (448px)</td></tr>
+          <tr>
+            <td class="p-2 border"><code>hidden</code></td>
+            <td class="p-2 border">Removes from layout (<code>display: none;</code>)</td>
+          </tr>
+          <tr>
+            <td class="p-2 border"><code>invisible</code></td>
+            <td class="p-2 border">Hidden but keeps space (<code>visibility: hidden;</code>)</td>
+          </tr>
+          <tr>
+            <td class="p-2 border"><code>visible</code></td>
+            <td class="p-2 border">Makes invisible elements visible again</td>
+          </tr>
         </tbody>
       </table>
-    </div>
-  </div>
-</section>
 
-<div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-<div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+      <p class="italic text-sm text-gray-400">💡 Tip: Combine with responsive prefixes like <code>md:hidden</code>, <code>sm:invisible</code>, or <code>lg:visible</code> to control visibility across screen sizes.</p>
+    </section>
 
-<section>
-  <div class="max-w-3xl mx-auto space-y-10">
-    <h1 class="text-3xl font-bold text-center text-gray-900">
-      Understanding <code>space-y-6</code> in Tailwind CSS
-    </h1>
+    <!-- 🙈 End of Built-in Utility Class Section -->
+ 
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
-    <!-- 🔹 What is space-y-6 1rem = 16 px, 24 -->
-    <div class="rounded-lg shadow p-6">
-      <h2 class="text-2xl font-semibold text-blue-700 mb-4">🔹 What is <code>space-y-6</code>?</h2>
-      <p class="mb-4">
-        The class <code>space-y-6</code> is used to add <strong>vertical spacing</strong> between <em>direct child elements</em> of a parent container.
-        It adds <code>1.5rem</code> (or <strong>24px</strong>) of space between each element stacked vertically.
-      </p>
-      <p class="italic mb-4 text-gray-700">
-        It's a cleaner alternative to adding <code>mb-6</code> to every child manually.
-      </p>
+    <section>
+      <div>
+        <h1>Understanding <code>md</code> in Tailwind CSS</h1>
 
-      <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded border border-gray-300">
-        <pre><code class="text-sm">&gt; * + * {
-  margin-top: 1.5rem; /* 24px */
-}</code></pre>
+        <!-- 🟢 md as a Breakpoint -->
+        <div class="rounded shadow p-6">
+          <h2 class="text-2xl font-semibold text-green-700 mb-4">🟢 1. <code>md</code> as a Breakpoint (for responsiveness)</h2>
+          <p class="mb-4">When you see <code>md:</code> at the beginning of a class, it means:</p>
+          <blockquote class="border-l-4 border-green-500 pl-4 italic text-gray-700 mb-4">
+            "Apply this style starting from medium screens (≥768px width)."
+          </blockquote>
+
+          <h3 class="font-semibold mb-2">🔹 Example:</h3>
+          <div class="mb-4">
+            <code class="block bg-gray-200 dark:bg-gray-700 p-2 rounded mb-1">&lt;div class="bg-red-500 md:bg-green-500"&gt;</code>
+            <ul class="list-disc pl-6 text-sm text-gray-700">
+              <li>On small screens → <code>bg-red-500</code></li>
+              <li>On screens ≥ 768px → <code>bg-green-500</code></li>
+            </ul>
+          </div>
+
+          <h3 class="font-semibold mb-2">📏 Tailwind's Default Breakpoints:</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left border border-collapse border-gray-300">
+              <thead class="bg-gray-200 dark:bg-gray-700">
+                <tr>
+                  <th class="border px-3 py-1">Prefix</th>
+                  <th class="border px-3 py-1">Min Width</th>
+                  <th class="border px-3 py-1">Device Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="border px-3 py-1">sm</td><td class="border px-3 py-1">640px</td><td class="border px-3 py-1">Small phones</td></tr>
+                <tr><td class="border px-3 py-1">md</td><td class="border px-3 py-1">768px</td><td class="border px-3 py-1">Tablets / Small laptops</td></tr>
+                <tr><td class="border px-3 py-1">lg</td><td class="border px-3 py-1">1024px</td><td class="border px-3 py-1">Laptops / Desktops</td></tr>
+                <tr><td class="border px-3 py-1">xl</td><td class="border px-3 py-1">1280px</td><td class="border px-3 py-1">Large desktops</td></tr>
+                <tr><td class="border px-3 py-1">2xl</td><td class="border px-3 py-1">1536px</td><td class="border px-3 py-1">Very large screens</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 🔵 md as a Size Value -->
+        <div class="rounded-lg shadow p-6">
+          <h2>🔵 2. <code>md</code> as a Size Value (like in <code>max-w-md</code>)</h2>
+          <p class="mb-4">In utility classes that control size (e.g., width, max-width, spacing), <code>md</code> refers to a predefined size value.</p>
+
+          <h3>🔹 Example:</h3>
+          <code class="block bg-gray-200 p-2 rounded mb-2">&lt;div class="max-w-md"&gt;</code>
+          <p class="mb-4">This sets:</p>
+          <code class="block bg-gray-100 p-2 rounded text-sm">max-width: 28rem; <span class="text-gray-500">/* which is 448px */</span></code>
+
+          <h3>📏 Tailwind width scale (common values):</h3>
+          <div class="overflow-x-auto">
+            <table>
+              <thead>
+                <tr>
+                  <th class="border px-3 py-1">Class</th>
+                  <th class="border px-3 py-1">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="border px-3 py-1">max-w-sm</td><td class="border px-3 py-1">24rem (384px)</td></tr>
+                <tr><td class="border px-3 py-1">max-w-md</td><td class="border px-3 py-1">28rem (448px)</td></tr>
+                <tr><td class="border px-3 py-1">max-w-lg</td><td class="border px-3 py-1">32rem (512px)</td></tr>
+                <tr><td class="border px-3 py-1">max-w-xl</td><td class="border px-3 py-1">36rem (576px)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="bg-yellow-100 dark:bg-gray-700 rounded-lg p-4 shadow-inner">
+          <h3>🧠 Summary:</h3>
+          <table>
+            <thead>
+              <tr>
+                <th class="border px-3 py-1">Use Case</th>
+                <th class="border px-3 py-1">Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="border px-3 py-1"><code>md:</code> (prefix)</td><td class="border px-3 py-1">Breakpoint ≥768px</td></tr>
+              <tr><td class="border px-3 py-1"><code>max-w-md</code></td><td class="border px-3 py-1">Size = 28rem (448px)</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- 🧪 Example -->
-    <div class="rounded-lg shadow p-6">
-      <h2 class="text-2xl font-semibold text-green-700 mb-4">🧪 Example</h2>
-      <p class="mb-4">The following layout stacks three boxes vertically with 24px spacing between them using <code>space-y-6</code>:</p>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
-      <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg space-y-6">
-        <div class="bg-white p-4 rounded shadow">Box 1</div>
-        <div class="bg-white p-4 rounded shadow">Box 2</div>
-        <div class="bg-white p-4 rounded shadow">Box 3</div>
+    <section>
+      <div class="max-w-3xl mx-auto space-y-10">
+        <h1>
+          Understanding <code>space-y-6</code> in Tailwind CSS
+        </h1>
+
+        <!-- 🔹 What is space-y-6 1rem = 16 px, 24 -->
+        <div class="rounded-lg shadow p-6">
+          <h2>🔹 What is <code>space-y-6</code>?</h2>
+          <p class="mb-4">
+            The class <code>space-y-6</code> is used to add <strong>vertical spacing</strong> between <em>direct child elements</em> of a parent container.
+            It adds <code>1.5rem</code> (or <strong>24px</strong>) of space between each element stacked vertically.
+          </p>
+          <p class="italic mb-4 text-gray-700">
+            It's a cleaner alternative to adding <code>mb-6</code> to every child manually.
+          </p>
+
+          <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded border border-gray-300">
+            <pre><code class="text-sm">&gt; * + * {
+      margin-top: 1.5rem; /* 24px */
+    }</code></pre>
+          </div>
+        </div>
+
+        <!-- 🧪 Example -->
+        <div class="rounded-lg shadow p-6">
+          <h2>🧪 Example</h2>
+          <p class="mb-4">The following layout stacks three boxes vertically with 24px spacing between them using <code>space-y-6</code>:</p>
+
+          <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg space-y-6">
+            <div class="bg-white p-4 rounded shadow">Box 1</div>
+            <div class="bg-white p-4 rounded shadow">Box 2</div>
+            <div class="bg-white p-4 rounded shadow">Box 3</div>
+          </div>
+        </div>
+
+        <!-- 📏 Spacing Scale -->
+        <div class="rounded-lg shadow p-6">
+          <h2>📏 Tailwind Spacing Scale</h2>
+          <p class="mb-4">You can adjust spacing with different values like <code>space-y-1</code>, <code>space-y-2</code>, etc.</p>
+          <div class="overflow-x-auto">
+            <table>
+              <thead>
+                <tr>
+                  <th class="border px-3 py-1">Class</th>
+                  <th class="border px-3 py-1">Spacing (rem)</th>
+                  <th class="border px-3 py-1">Pixels</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="border px-3 py-1">space-y-1</td><td class="border px-3 py-1">0.25rem</td><td class="border px-3 py-1">4px</td></tr>
+                <tr><td class="border px-3 py-1">space-y-2</td><td class="border px-3 py-1">0.5rem</td><td class="border px-3 py-1">8px</td></tr>
+                <tr><td class="border px-3 py-1">space-y-4</td><td class="border px-3 py-1">1rem</td><td class="border px-3 py-1">16px</td></tr>
+                <tr class="bg-yellow-50"><td class="border px-3 py-1">space-y-6</td><td class="border px-3 py-1">1.5rem</td><td class="border px-3 py-1">24px</td></tr>
+                <tr><td class="border px-3 py-1">space-y-8</td><td class="border px-3 py-1">2rem</td><td class="border px-3 py-1">32px</td></tr>
+                <tr><td class="border px-3 py-1">space-y-10</td><td class="border px-3 py-1">2.5rem</td><td class="border px-3 py-1">40px</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 🔁 Horizontal -->
+        <div class="rounded-lg shadow p-6">
+          <h2>🔁 Bonus: Horizontal Spacing</h2>
+          <p class="mb-4">
+            You can also use <code>space-x-6</code> to add horizontal spacing between inline elements, like buttons or columns.
+          </p>
+          <div class="flex space-x-6">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded">Button 1</button>
+            <button class="bg-blue-700 text-white px-4 py-2 rounded">Button 2</button>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- 📏 Spacing Scale -->
-    <div class="rounded-lg shadow p-6">
-      <h2 class="text-2xl font-semibold text-purple-700 mb-4">📏 Tailwind Spacing Scale</h2>
-      <p class="mb-4">You can adjust spacing with different values like <code>space-y-1</code>, <code>space-y-2</code>, etc.</p>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm text-left border border-collapse border-gray-300">
-          <thead class="bg-gray-200">
-            <tr>
-              <th class="border px-3 py-1">Class</th>
-              <th class="border px-3 py-1">Spacing (rem)</th>
-              <th class="border px-3 py-1">Pixels</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="border px-3 py-1">space-y-1</td><td class="border px-3 py-1">0.25rem</td><td class="border px-3 py-1">4px</td></tr>
-            <tr><td class="border px-3 py-1">space-y-2</td><td class="border px-3 py-1">0.5rem</td><td class="border px-3 py-1">8px</td></tr>
-            <tr><td class="border px-3 py-1">space-y-4</td><td class="border px-3 py-1">1rem</td><td class="border px-3 py-1">16px</td></tr>
-            <tr class="bg-yellow-50"><td class="border px-3 py-1">space-y-6</td><td class="border px-3 py-1">1.5rem</td><td class="border px-3 py-1">24px</td></tr>
-            <tr><td class="border px-3 py-1">space-y-8</td><td class="border px-3 py-1">2rem</td><td class="border px-3 py-1">32px</td></tr>
-            <tr><td class="border px-3 py-1">space-y-10</td><td class="border px-3 py-1">2.5rem</td><td class="border px-3 py-1">40px</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- 🔁 Horizontal -->
-    <div class="rounded-lg shadow p-6">
-      <h2>🔁 Bonus: Horizontal Spacing</h2>
-      <p class="mb-4">
-        You can also use <code>space-x-6</code> to add horizontal spacing between inline elements, like buttons or columns.
-      </p>
-      <div class="flex space-x-6">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded">Button 1</button>
-        <button class="bg-blue-700 text-white px-4 py-2 rounded">Button 2</button>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
+    <div class="first-line"></div>
+    <div class="second-line"></div>
 
   </div>
   <script>
