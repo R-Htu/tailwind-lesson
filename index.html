@@ -15,9 +15,14 @@
                rounded text-gray-800 dark:bg-gray-800
                dark:text-yellow-100;
       }
-      h1, h2, h3 {
-        @apply text-xl font-semibold text-green-700 
-               dark:text-yellow-500 mb-4;
+      h1 {
+        @apply text-2xl font-bold text-green-700 
+               dark:text-yellow-500 my-4;
+      }
+
+      h2, h3 {
+        @apply text-xl font-bold text-green-900 
+               dark:text-yellow-500 my-4;
       }
     }
   </style>
@@ -48,7 +53,7 @@
    <!-- ✅ Padding Section -->
   
     <section>
-        <h2 class="text-xl font-black mb-2 text-green-600 dark:text-yellow-500">What does <code>p-8</code> mean?</h2>
+        <h2>What does <code>p-8</code> mean?</h2>
         <ul class="list-disc list-inside">
         <li><code>p</code> = padding on <strong>all sides</strong></li>
         <li><code>8</code> = spacing unit from Tailwind’s scale</li>
@@ -873,15 +878,15 @@
 
 <!-- 🙈 End of Built-in Utility Class Section -->
  
-    <div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
-    <div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
+<div class="my-4 border-t border-b border-black dark:border-yellow-600"></div>
+<div class="my-4 border-t border-b border-green-500 dark:border-white"></div>
 
-    <section>
+<section>
   <div class="max-w-4xl mx-auto space-y-10">
     <h1 class="text-3xl font-bold text-center text-gray-900">Understanding <code>md</code> in Tailwind CSS</h1>
 
     <!-- 🟢 md as a Breakpoint -->
-    <div class="bg-white rounded-lg shadow p-6">
+    <div class="rounded shadow p-6">
       <h2 class="text-2xl font-semibold text-green-700 mb-4">🟢 1. <code>md</code> as a Breakpoint (for responsiveness)</h2>
       <p class="mb-4">When you see <code>md:</code> at the beginning of a class, it means:</p>
       <blockquote class="border-l-4 border-green-500 pl-4 italic text-gray-700 mb-4">
@@ -890,7 +895,7 @@
 
       <h3 class="font-semibold mb-2">🔹 Example:</h3>
       <div class="mb-4">
-        <code class="block bg-gray-200 p-2 rounded mb-1">&lt;div class="bg-red-500 md:bg-green-500"&gt;</code>
+        <code class="block bg-gray-200 dark:bg-gray-700 p-2 rounded mb-1">&lt;div class="bg-red-500 md:bg-green-500"&gt;</code>
         <ul class="list-disc pl-6 text-sm text-gray-700">
           <li>On small screens → <code>bg-red-500</code></li>
           <li>On screens ≥ 768px → <code>bg-green-500</code></li>
@@ -900,7 +905,7 @@
       <h3 class="font-semibold mb-2">📏 Tailwind's Default Breakpoints:</h3>
       <div class="overflow-x-auto">
         <table class="w-full text-sm text-left border border-collapse border-gray-300">
-          <thead class="bg-gray-200">
+          <thead class="bg-gray-200 dark:bg-gray-700">
             <tr>
               <th class="border px-3 py-1">Prefix</th>
               <th class="border px-3 py-1">Min Width</th>
@@ -919,7 +924,7 @@
     </div>
 
     <!-- 🔵 md as a Size Value -->
-    <div class="bg-white rounded-lg shadow p-6">
+    <div class="rounded-lg shadow p-6">
       <h2 class="text-2xl font-semibold text-blue-700 mb-4">🔵 2. <code>md</code> as a Size Value (like in <code>max-w-md</code>)</h2>
       <p class="mb-4">In utility classes that control size (e.g., width, max-width, spacing), <code>md</code> refers to a predefined size value.</p>
 
@@ -948,7 +953,7 @@
     </div>
 
     <!-- Summary -->
-    <div class="bg-yellow-100 rounded-lg p-4 shadow-inner">
+    <div class="bg-yellow-100 dark:bg-gray-700 rounded-lg p-4 shadow-inner">
       <h3 class="font-bold text-lg mb-2">🧠 Summary:</h3>
       <table class="text-sm w-full border border-collapse border-gray-300">
         <thead class="bg-yellow-200">
@@ -986,7 +991,7 @@
         It's a cleaner alternative to adding <code>mb-6</code> to every child manually.
       </p>
 
-      <div class="bg-gray-100 p-4 rounded border border-gray-300">
+      <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded border border-gray-300">
         <pre><code class="text-sm">&gt; * + * {
   margin-top: 1.5rem; /* 24px */
 }</code></pre>
@@ -998,7 +1003,7 @@
       <h2 class="text-2xl font-semibold text-green-700 mb-4">🧪 Example</h2>
       <p class="mb-4">The following layout stacks three boxes vertically with 24px spacing between them using <code>space-y-6</code>:</p>
 
-      <div class="bg-gray-100 p-4 rounded-lg space-y-6">
+      <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg space-y-6">
         <div class="bg-white p-4 rounded shadow">Box 1</div>
         <div class="bg-white p-4 rounded shadow">Box 2</div>
         <div class="bg-white p-4 rounded shadow">Box 3</div>
